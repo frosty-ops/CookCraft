@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website Title -->
+    <title>CookCraft</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+<!-- Background Overlay -->
+<!-- ========================================================= -->
+
+<div class="overlay"></div>
+
+
+<!-- ========================================================= -->
+<!-- Navigation Bar -->
+<!-- ========================================================= -->
+
+<nav>
+
+    <!-- Website Logo -->
+    <div class="logo">
+
+        <i class="fa-solid fa-hat-chef"></i>
+
+        <span class="green">Cook</span>Craft
+
+    </div>
+
+    <!-- Navigation Links -->
+
+    <ul>
+
+        <li><a class="active" href="#">Home</a></li>
+
+        <li><a href="#recipes-section">Recipes</a></li>
+
+        <li><a href="#about-section">About</a></li>
+
+        <li>
+
+            <a href="#contact-section" class="contact-btn">
+
+    Contact
+
+</a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ========================================================= -->
+<!-- HERO SECTION -->
+<!-- ========================================================= -->
+
+<section class="hero">
+
+    <i class="fa-solid fa-hat-chef chef-icon"></i>
+
+    <h1>
+
+        <span class="green">Cook</span>Craft
+
+    </h1>
+
+    <p>
+
+        Discover Your Next Favorite Meal
+
+    </p>
+
+    <!-- Search Box -->
+
+    <div class="search-box">
+
+       <input
+    type="text"
+    id="search-input"
+    placeholder="Search for pizza, pasta, biryani...">
+
+<button id="search-btn">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    Search
+
+</button>
+    </div>
+
+</section>
+
+<!-- ========================================================= -->
+<!-- TRENDING RECIPES SECTION -->
+<!-- ========================================================= -->
+
+<section class="trending">
+
+    <!-- Section Heading -->
+    <div class="section-header">
+
+        <h2>
+            🔥 Trending Recipes
+        </h2>
+
+        
+
+    </div>
+
+    <!--
+        JavaScript will automatically create
+        all Trending Recipe cards here.
+    -->
+
+    <div class="recipe-grid" id="trending-container">
+
+    </div>
+    <!-- ========================================= -->
+<!-- Trending Slider Controls -->
+<!-- ========================================= -->
+
+<div class="slider-controls">
+
+    <!-- Previous Button -->
+    <button id="prev-btn">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+    <!-- Slider Dots -->
+    <div id="slider-dots">
+
+    </div>
+
+    <!-- Next Button -->
+    <button id="next-btn">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- SEARCH RESULTS SECTION -->
+<!-- ========================================================= -->
+
+<section class="search-results">
+
+    <!-- Section Heading -->
+    <div class="section-header">
+
+        <h2>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Search Results
+
+        </h2>
+
+       <button
+    class="view-all"
+    onclick="viewAllResults()">
+
+    View All Results
+
+</button>
+
+    </div>
+
+    <!--
+        JavaScript will automatically create
+        search result cards here.
+    -->
+
+    <div class="recipe-grid" id="results-container">
+
+    </div>
+
+</section>
+<!-- ========================================================= -->
+<!-- ALL RECIPES SECTION -->
+<!-- ========================================================= -->
+
+<section id="recipes-section" class="recipes-section">
+
+    <!-- Heading -->
+    <div class="section-header">
+
+        <h2>🍽 Explore Recipes</h2>
+
+    </div>
+
+    <!-- JavaScript will add recipe rectangles here -->
+    <div id="recipes-container">
+
+    </div>
+
+    <!-- Load More Button -->
+    <div class="load-more-container">
+
+        <button id="load-more-btn">
+
+            Load More
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ========================================================= -->
+<!-- Recipe Details Modal -->
+<!-- ========================================================= -->
+
+<div id="recipe-modal" class="modal">
+
+    <!-- Modal Content -->
+    <div class="modal-content">
+
+        <!-- Close Button -->
+        <span class="close-btn">&times;</span>
+
+        <!-- Recipe Image -->
+        <img id="modal-image" src="" alt="Recipe Image">
+
+        <!-- Recipe Name -->
+        <h2 id="modal-title">Recipe Name</h2>
+
+        <!-- Category & Area -->
+        <p id="modal-info"></p>
+
+        <!-- Ingredients -->
+        <h3>🥄 Ingredients</h3>
+
+        <ul id="ingredients-list">
+
+        </ul>
+
+        <!-- Instructions -->
+        <h3>📖 Instructions</h3>
+
+        <p id="modal-instructions"></p>
+
+        <!-- YouTube Button -->
+        <a id="youtube-link"
+           href="#"
+           target="_blank">
+
+            ▶ Watch on YouTube
+
+        </a>
+
+    </div>
+
+</div>
+<!-- ========================================================= -->
+<!-- ABOUT + CONTACT BACKGROUND -->
+<!-- ========================================================= -->
+
+<div class="about-contact-bg">
+
+    <!-- ========================================================= -->
+    <!-- ABOUT SECTION -->
+    <!-- ========================================================= -->
+
+    <section id="about-section" class="about-section">
+
+        <div class="section-header">
+
+            <h2>👨‍🍳 About CookCraft</h2>
+
+        </div>
+
+        <div class="about-content">
+
+            <p>
+
+                CookCraft is your smart recipe companion designed to help you discover delicious meals from around the world.
+                Whether you're craving pasta, pizza, desserts, or healthy dishes, CookCraft makes finding recipes quick, simple,
+                and enjoyable.
+
+            </p>
+
+            <p>
+
+                Search thousands of recipes, explore trending dishes, and follow step-by-step cooking instructions with ease.
+                Our goal is to make cooking fun for everyone—from beginners to experienced home chefs.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CONTACT SECTION -->
+    <!-- ========================================================= -->
+
+    <section id="contact-section" class="contact-section">
+
+        <div class="section-header">
+
+            <h2>📞 Contact Us</h2>
+
+        </div>
+
+        <div class="contact-content">
+
+            <p><strong>Email:</strong> contact@cookcraft.com</p>
+
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+
+            <p><strong>Location:</strong> Pune, Maharashtra, India</p>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-card">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <h3>Explore Recipes</h3>
+
+            <p>Discover delicious recipes from around the world.</p>
+
+        </div>
+
+        <div class="footer-card">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <h3>Healthy Choices</h3>
+
+            <p>Find healthy and nutritious meals for every day.</p>
+
+        </div>
+
+        <div class="footer-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Quick & Easy</h3>
+
+            <p>Save time with quick and easy recipes.</p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>
+
+        <span class="green">Cook</span>Craft
+
+    </h2>
+
+    <div class="social-icons">
+
+        <i class="fab fa-instagram"></i>
+
+        <i class="fab fa-facebook-f"></i>
+
+        <i class="fab fa-twitter"></i>
+
+        <i class="fab fa-youtube"></i>
+
+    </div>
+
+    <p>
+
+        © 2025 CookCraft. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+ 
+
+<!-- ========================================================= -->
+<!-- JavaScript File -->
+<!-- ========================================================= -->
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
