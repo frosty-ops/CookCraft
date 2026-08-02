@@ -16,57 +16,57 @@ Users can search recipes, explore trending meals, view detailed cooking instruct
 
 ## 🏠 Hero Section
 
-![Hero Section](static/images/C1.png)
+![Hero Section](static/images/c1.png)
 
 ---
 
 ## 🔥 Trending Recipes
 
-![Trending Recipes](static/images/C2.png)
+![Trending Recipes](static/images/c2.png)
 
 ---
 
 ## 🔍 Search Results
 
-![Search Results](static/images/C3.png)
+![Search Results](static/images/c3.png)
 
 ---
 
 ## 📋 View All Results
 
-![View All Results](static/images/C4.png)
+![View All Results](static/images/c4.png)
 
 ---
 
 ## 🍽 Recipe Details
 
-![Recipe Details](static/images/C5.png)
+![Recipe Details](static/images/c5.png)
 
 ### 🥣 Ingredients
 
-![Ingredients](static/images/C5-1.png)
+![Ingredients](static/images/c5-1.png)
 
 ### 📖 Instructions & YouTube
 
-![Instructions](static/images/C5-2.png)
+![Instructions](static/images/c5-2.png)
 
 ---
 
 ## 🍴 Explore Recipes
 
-![Explore Recipes](static/images/C6.png)
+![Explore Recipes](static/images/c6.png)
 
 ---
 
 ## 👨‍🍳 About & Contact
 
-![About & Contact](static/images/C7.png)
+![About & Contact](static/images/c7.png)
 
 ---
 
 ## 📄 Footer
 
-![Footer](static/images/C8.png)
+![Footer](static/images/c8.png)
 
 ---
 
